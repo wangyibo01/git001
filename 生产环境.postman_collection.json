@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "c27de8b2-8a98-4241-b5fd-1f70b4e8c238",
+		"name": "生产环境",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "新闻——体育",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://way.jd.com/jisuapi/get?appkey=017818c9f270491760fb32b046003239&channel=体育&num=20&start=0",
+					"protocol": "https",
+					"host": [
+						"way",
+						"jd",
+						"com"
+					],
+					"path": [
+						"jisuapi",
+						"get"
+					],
+					"query": [
+						{
+							"key": "appkey",
+							"value": "017818c9f270491760fb32b046003239"
+						},
+						{
+							"key": "channel",
+							"value": "体育"
+						},
+						{
+							"key": "num",
+							"value": "20"
+						},
+						{
+							"key": "start",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "菜谱大全——白菜",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"appkey\", \"017818c9f270491760fb32b046003239\");"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://way.jd.com/jisuapi/search?appkey=017818c9f270491760fb32b046003239&keyword=白菜&num=20&start=0",
+					"protocol": "https",
+					"host": [
+						"way",
+						"jd",
+						"com"
+					],
+					"path": [
+						"jisuapi",
+						"search"
+					],
+					"query": [
+						{
+							"key": "appkey",
+							"value": "017818c9f270491760fb32b046003239"
+						},
+						{
+							"key": "keyword",
+							"value": "白菜"
+						},
+						{
+							"key": "num",
+							"value": "20"
+						},
+						{
+							"key": "start",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "笑话大全",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://way.jd.com/showapi/dtgxt?appkey={{appkey}}&page=1&maxResult=10",
+					"protocol": "https",
+					"host": [
+						"way",
+						"jd",
+						"com"
+					],
+					"path": [
+						"showapi",
+						"dtgxt"
+					],
+					"query": [
+						{
+							"key": "appkey",
+							"value": "{{appkey}}"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "maxResult",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "驾考宝典",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://way.jd.com/jisuapi/driverexamQuery?type=c1&subject=1&pagesize=1&pagenum=1&sort=normal&appkey={{appkey}}",
+					"protocol": "https",
+					"host": [
+						"way",
+						"jd",
+						"com"
+					],
+					"path": [
+						"jisuapi",
+						"driverexamQuery"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "c1"
+						},
+						{
+							"key": "subject",
+							"value": "1"
+						},
+						{
+							"key": "pagesize",
+							"value": "1"
+						},
+						{
+							"key": "pagenum",
+							"value": "1"
+						},
+						{
+							"key": "sort",
+							"value": "normal"
+						},
+						{
+							"key": "appkey",
+							"value": "{{appkey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
